@@ -3,64 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VM File Manager</title>
+    <title>My Simple Website</title>
     <style>
         body {
-            font-family: 'Courier New', monospace;
-            background-color: #000;
-            color: #fff;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
         }
         header {
-            background: #111;
-            padding: 1.5rem;
-            border-bottom: 1px solid #333;
+            background: #35424a;
+            color: white;
+            padding: 1rem 0;
             text-align: center;
+        }
+        nav {
+            background: #e8491d;
+            padding: 0.5rem;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
         }
         .container {
-            width: 90%;
-            margin: 2rem auto;
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 2rem;
-        }
-        .sidebar {
-            background: #111;
-            padding: 1rem;
-            border: 1px solid #333;
-        }
-        .main-content {
-            background: #111;
-            padding: 1rem;
-            border: 1px solid #333;
-        }
-        h1, h2, h3 {
-            color: #fff;
-        }
-        button {
-            background: #333;
-            color: #fff;
-            border: 1px solid #555;
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            font-family: inherit;
-        }
-        button:hover {
-            background: #555;
-        }
-        pre {
-            background: #000;
-            padding: 1rem;
-            border: 1px solid #333;
-            overflow-x: auto;
+            width: 80%;
+            margin: auto;
+            padding: 20px;
         }
         footer {
+            background: #35424a;
+            color: white;
             text-align: center;
-            padding: 1rem;
-            background: #111;
-            border-top: 1px solid #333;
+            padding: 1rem 0;
             position: fixed;
             bottom: 0;
             width: 100%;
@@ -69,57 +54,28 @@
 </head>
 <body>
     <header>
-        <h1>VIRTUAL MACHINE FILE MANAGER</h1>
-        <p>Secure file transfer between host and VMs</p>
+        <h1>Welcome to My Website</h1>
     </header>
-
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
     <div class="container">
-        <!-- Sidebar: File Operations -->
-        <div class="sidebar">
-            <h2>File Operations</h2>
-            <button onclick="uploadFile()">Upload to Host</button>
-            <button onclick="transferToVM('Windows10')">Send to Windows 10 VM</button>
-            <button onclick="transferToVM('KaliLinux')">Send to Kali Linux VM</button>
-            <button onclick="transferToVM('pfSense')">Send to pfSense VM</button>
-            
-            <h3>Recent Files</h3>
-            <pre id="file-list">
-logs.txt
-malware-sample.exe
-network-config.json
-            </pre>
-        </div>
-
-        <!-- Main Content: Status and Logs -->
-        <div class="main-content">
-            <h2>Transfer Logs</h2>
-            <pre id="transfer-logs">
-[2024-05-07 14:30] Success: malware-sample.exe → Windows10 VM
-[2024-05-07 14:25] Error: network-config.json → pfSense VM (Connection timeout)
-[2024-05-07 14:20] Success: logs.txt → KaliLinux VM
-            </pre>
-
-            <h2>VM Status</h2>
-            <pre>
-Windows10    █ Running (IP: 192.168.1.101)
-KaliLinux    █ Running (IP: 192.168.1.102)
-pfSense      █ Stopped
-            </pre>
-        </div>
+        <h2>About This Site</h2>
+        <p>This is a simple static website. You can edit it and add more pages as needed.</p>
+        <p>Example features:</p>
+        <ul>
+            <li>Responsive design (works on mobile & desktop)</li>
+            <li>Clean, modern look</li>
+            <li>Easy to customize</li>
+        </ul>
     </div>
-
     <footer>
-        <p>⚠️ WARNING: This system handles sensitive files. Ensure VMs are isolated.</p>
+        <p>&copy; 2024 My Simple Website. All rights reserved.</p>
     </footer>
-
-    <script>
-        // Example functions (replace with actual file handling logic)
-        function uploadFile() {
-            document.getElementById('transfer-logs').innerText += '\n[2024-05-07 14:35] Uploaded: new-file.zip → Host';
-        }
-        function transferToVM(vmName) {
-            document.getElementById('transfer-logs').innerText += `\n[2024-05-07 14:35] Transfer initiated → ${vmName} VM`;
-        }
-    </script>
 </body>
 </html>
